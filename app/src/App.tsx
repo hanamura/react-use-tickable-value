@@ -1,5 +1,16 @@
-import { Button } from '../../src/Button'
+import { useEffect, useState } from 'react'
+
+import { useTickableValue } from '../../src'
 
 export const App = () => {
-  return <Button type="primary">Click me</Button>
+  const { get, set, watch } = useTickableValue(0)
+  const [value, setValue] = useState(get())
+
+  useEffect(() => {
+    return watch((value) => {
+      setValue(value)
+    })
+  }, [watch])
+
+  return <button onClick={() => set((v) => v + 1)}>Click me: {value}</button>
 }
