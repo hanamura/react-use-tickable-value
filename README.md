@@ -1,9 +1,8 @@
-# ⚛️ React Lib Template
+# ⚛️ useTickableValue
 
 ## Usage
 
 ```jsx
-import { Button } from '@hanamura/react-lib-template'
-import '@hanamura/react-lib-template/dist/index.css'
-;<Button type="primary">Hello</Button>
+import { useTickableValue } from '@hanamura/react-use-tickable-value'
+const { get, set, watch } = useTickableValue(0)
 ```
